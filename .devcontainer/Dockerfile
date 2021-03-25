@@ -6,5 +6,4 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-1
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-cargo install cargo-compete
-rustup component add rustfmt --toolchain 1.42.0-x86_64-unknown-linux-gnu
+RUN cargo install cargo-compete --locked

@@ -1,3 +1,9 @@
+use proconio::input;
+
 fn main() {
-    todo!();
+    input! {
+        x: String,
+    }
+    let s: Vec<&str> = x.split(".").collect();
+    println!("{}", s[0]);
 }

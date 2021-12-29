@@ -2,7 +2,7 @@
 
 https://github.com/qryxip/cargo-compete/blob/master/README-ja.md
 
-## create acafold
+## create scaffold
 
 ```bash
 $ cargo compete new abc233

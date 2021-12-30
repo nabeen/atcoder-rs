@@ -3,5 +3,9 @@
 use proconio::input;
 
 fn main() {
-    todo!();
+    input! {
+        d: f32
+    }
+
+    println!("{}", d / 100.0)
 }

@@ -3,5 +3,10 @@
 use proconio::input;
 
 fn main() {
-    todo!();
+    input! {
+        s: String
+    }
+
+    let t = "oxx".repeat(10 ^ 5);
+    println! {"{}", if t.find(&s).is_some() {"Yes"} else {"No"}}
 }

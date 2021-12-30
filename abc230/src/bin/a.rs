@@ -3,5 +3,9 @@
 use proconio::input;
 
 fn main() {
-    todo!();
+    input! {
+        n: i8
+    }
+
+    println!("AGC{0:>03}", if n >= 42 { n + 1 } else { n })
 }

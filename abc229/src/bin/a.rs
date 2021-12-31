@@ -5,24 +5,16 @@ use proconio::marker::Chars;
 
 fn main() {
     input! {
-        s1: Chars,
-        s2: Chars
+        s1: String,
+        s2: String,
     }
-
-    let b: char = '#';
 
     println!(
         "{}",
-        if s1[0] == b && s1[1] == b {
-            "Yes"
-        } else if s2[0] == b && s2[1] == b {
-            "Yes"
-        } else if s1[0] == b && s2[0] == b {
-            "Yes"
-        } else if s1[1] == b && s2[1] == b {
-            "Yes"
-        } else {
+        if s1 == ".#" && s2 == "#." || s2 == ".#" && s1 == "#." {
             "No"
+        } else {
+            "Yes"
         }
     )
 }

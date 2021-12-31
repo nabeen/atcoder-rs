@@ -5,21 +5,19 @@ use proconio::marker::Chars;
 
 fn main() {
     input! {
-        a: isize,
-        b: isize,
+        mut a: isize,
+        mut b: isize,
     }
 
-    let mut kuri = 0;
-    let mut aa = a;
-    let mut bb = b;
+    let mut d = 0;
     loop {
-        if aa <= 0 || bb <= 0 || kuri > 0 {
+        if a <= 0 || b <= 0 || d > 0 {
             break;
         }
 
-        kuri = (aa % 10 + bb % 10) / 10;
-        aa /= 10;
-        bb /= 10;
+        d = (a % 10 + b % 10) / 10;
+        a /= 10;
+        b /= 10;
     }
-    println!("{}", if kuri > 0 { "Hard" } else { "Easy" });
+    println!("{}", if d > 0 { "Hard" } else { "Easy" });
 }

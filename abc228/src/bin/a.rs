@@ -3,5 +3,15 @@
 use proconio::input;
 
 fn main() {
-    todo!();
+    input! {
+        s: i8,
+        t: i8,
+        x: i8,
+    }
+
+    if s < t {
+        println!("{}", if s <= x && x < t { "Yes" } else { "No" })
+    } else if s > t {
+        println!("{}", if s <= x || x < t { "Yes" } else { "No" })
+    }
 }

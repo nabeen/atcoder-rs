@@ -3,5 +3,9 @@
 use proconio::input;
 
 fn main() {
-    todo!();
+    input! {
+        x: f32,
+    }
+
+    println!("{}", x.round());
 }

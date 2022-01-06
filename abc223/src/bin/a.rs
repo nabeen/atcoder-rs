@@ -3,5 +3,9 @@
 use proconio::input;
 
 fn main() {
-    todo!();
+    input! {
+        x: usize
+    }
+
+    println!("{}", if x % 100 == 0 && x != 0 { "Yes" } else { "No" })
 }

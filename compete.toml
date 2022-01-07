@@ -32,6 +32,8 @@ fn main() {
 '''
 
 [template.new]
+# `edition` for `Cargo.toml`.
+edition = "2018"
 # `profile` for `Cargo.toml`.
 #
 # By setting this, you can run tests with `opt-level=3` while enabling `debug-assertions` and `overflow-checks`.
@@ -80,6 +82,9 @@ whiteread = "=0.5.0"
 rustc-hash = "=1.1.0"
 smallvec = "=1.2.0"
 '''
+dev-dependencies = '''
+#atcoder-202004-lock = { git = "https://github.com/qryxip/atcoder-202004-lock" }
+'''
 
 [template.new.copy-files]
 "./template-cargo-lock.toml" = "Cargo.lock"
@@ -109,6 +114,7 @@ path = "./{{ contest }}"
 #[add]
 #url = "https://judge.yosupo.jp/problem/{{ args[0] }}"
 ##is-contest = ["false"] # optional
+##target-kind = "bin" # ["bin", "example"]. default to "bin"
 #bin-name = '{{ args[0] }}'
 ##bin-alias = '{{ args[0] }}' # optional
 ##bin-src-path = './src/bin/{{ bin_alias }}.rs' # optional
@@ -117,11 +123,14 @@ path = "./{{ contest }}"
 #[add]
 #url = '{% case args[0] %}{% when "contest" %}https://yukicoder.me/contests/{{ args[1] }}{% when "problem" %}https://yukicoder.me/problems/no/{{ args[1] }}{% endcase %}'
 #is-contest = ["bash", "-c", '[[ $(cut -d / -f 4) == "contests" ]]'] # optional
+##target-kind = "bin" # ["bin", "example"]. default to "bin"
 #bin-name = '{% assign segments = url | split: "/" %}{{ segments[5] }}'
 ##bin-alias = '{% assign segments = url | split: "/" %}{{ segments[5] }}' # optional
 ##bin-src-path = './src/bin/{{ bin_alias }}.rs' # optional
 
 [test]
+# Toolchain for the test. (optional)
+toolchain = "1.42.0"
 # Profile for `cargo build`. ("dev" | "release")
 #
 # Defaults to `"dev"`.
@@ -129,5 +138,5 @@ path = "./{{ contest }}"
 
 #[submit.transpile]
 #kind = "command"
-#args = ["cargo", "equip", "--resolve-cfgs", "--remove", "docs", "--minify", "libs", "--rustfmt", "--check", "--bin", "{{ bin_name }}"]
+#args = ["cargo", "equip", "--exclude-atcoder-crates", "--resolve-cfgs", "--remove", "docs", "--minify", "libs", "--rustfmt", "--check", "--bin", "{{ bin_name }}"]
 ##language_id = ""

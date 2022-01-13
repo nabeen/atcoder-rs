@@ -3,5 +3,10 @@
 use proconio::input;
 
 fn main() {
-    todo!();
+    input! {
+        s: String,
+        t: String,
+    }
+
+    println!("{}", if s < t { "Yes" } else { "No" })
 }

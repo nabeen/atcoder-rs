@@ -3,5 +3,9 @@
 use proconio::input;
 
 fn main() {
-    todo!();
+    input! {
+        s: String
+    }
+
+    println!("{}", if s == "Hello,World!" { "AC" } else { "WA" });
 }

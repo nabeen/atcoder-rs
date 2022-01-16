@@ -3,5 +3,10 @@
 use proconio::input;
 
 fn main() {
-    todo!();
+    input! {
+        a: isize,
+        b: isize,
+    }
+
+    println!("{}", a ^ b)
 }

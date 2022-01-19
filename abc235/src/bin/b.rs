@@ -3,5 +3,18 @@
 use proconio::input;
 
 fn main() {
-    todo!();
+    input! {
+        n: usize,
+        h: [usize; n]
+    }
+
+    let mut ans = 0;
+    for i in h {
+        if ans >= i {
+            break;
+        } else {
+            ans = i;
+        }
+    }
+    println!("{}", ans);
 }

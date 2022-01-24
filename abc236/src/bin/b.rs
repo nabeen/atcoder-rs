@@ -6,12 +6,10 @@ use std::collections::HashMap;
 fn main() {
     input! {
         n: usize,
-        mut a: [usize; 4*n-1]
+        a: [usize; 4*n-1]
     }
 
-    let mut map = HashMap::new();
-    for i in a {
-        *map.entry(i).or_insert(0) += 1;
-    }
-    println!("{}", map.iter().min_by(|x, y| x.1.cmp(y.1)).unwrap().0)
+    let total = (1..n + 1).fold(0, |sum, x| sum + 4 * x);
+    let sum = a.iter().fold(0, |sum, x| sum + x);
+    println!("{}", total - sum);
 }

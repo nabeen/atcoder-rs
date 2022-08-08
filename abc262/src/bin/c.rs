@@ -2,24 +2,24 @@
 #![allow(unused_imports)]
 use std::cmp::{min, max};
 
-use proconio::input;
+use proconio::{input, marker::Usize1};
 
 fn main() {
     input! {
         n: usize,
-        a: [usize;n]
+        a: [Usize1;n]
     }
 
-    let mut ans = 0;
+    let mut ans: i64 = 0;
+    let mut c: i64 = 0;
     for i in 0..n {
-        for j in 0..n {
-            if i == j {
-                continue;
-            }
-            if min(a[i], a[j]) == i+1 && max(a[i], a[j]) == j+1 && (1 <= i+1 && i+1 <= j+1 && j+1 <= n) {
-                ans+=1;
-            }
+        if a[i] == i {
+            c+=1;
+        } else if a[a[i]] == i && a[i] > i {
+            ans+=1;
         }
     }
+
+    ans += c * (c - 1) / 2;
     println!("{}", ans);
 }

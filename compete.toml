@@ -24,8 +24,10 @@ test-suite = "{{ manifest_dir }}/testcases/{{ bin_alias }}.yml"
 src = '''
 #![allow(non_snake_case)]
 #![allow(unused_imports)]
+use proconio::fastout;
 use proconio::input;
 
+#[fastout]
 fn main() {
     todo!();
 }
